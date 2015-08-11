@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: {{lower_author}}.{{lower_plugin}}::lang.{{lower_singular_name}}.label
+
+# Model Form Field configuration
+form: $/{{lower_author}}/{{lower_plugin}}/models/{{lower_model}}/fields.yaml
+
+# Model Class name
+modelClass: {{studly_author}}\{{studly_plugin}}\Models\{{studly_model}}
+
+# Default redirect location
+defaultRedirect: {{lower_author}}/{{lower_plugin}}/{{lower_name}}
+
+# Create page
+create:
+    title: {{lower_author}}.{{lower_plugin}}::lang.{{lower_singular_name}}.create_title
+    redirect: {{lower_author}}/{{lower_plugin}}/{{lower_name}}/update/:id
+    redirectClose: {{lower_author}}/{{lower_plugin}}/{{lower_name}}
+
+# Update page
+update:
+    title: {{lower_author}}.{{lower_plugin}}::lang.{{lower_singular_name}}.update_title
+    redirect: {{lower_author}}/{{lower_plugin}}/{{lower_name}}
+    redirectClose: {{lower_author}}/{{lower_plugin}}/{{lower_name}}
+
+# Preview page
+preview:
+    title: {{lower_author}}.{{lower_plugin}}::lang.{{lower_singular_name}}.preview_title

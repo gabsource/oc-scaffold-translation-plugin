@@ -1,0 +1,21 @@
+<?php namespace {{studly_author}}\{{studly_plugin}}\Components;
+
+use Cms\Classes\ComponentBase;
+
+class {{studly_name}} extends ComponentBase
+{
+
+    public function componentDetails()
+    {
+        return [
+            'name'        => trans('{{lower_author}}.{{lower_plugin}}::lang.components.{{lower_name}}.name'),
+            'description' => trans('{{lower_author}}.{{lower_plugin}}::lang.components.{{lower_name}}.description')
+        ];
+    }
+
+    public function defineProperties()
+    {
+        return [];
+    }
+
+}

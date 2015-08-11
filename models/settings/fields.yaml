@@ -1,0 +1,9 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    default_mode:
+        label: bnb.scaffoldtranslation::lang.settings.field_default_mode
+        type: checkbox
+        default: true

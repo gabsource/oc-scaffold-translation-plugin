@@ -1,0 +1,26 @@
+<?php namespace {{studly_author}}\{{studly_name}};
+
+use System\Classes\PluginBase;
+
+/**
+ * {{name}} Plugin Information File
+ */
+class Plugin extends PluginBase
+{
+
+    /**
+     * Returns information about this plugin.
+     *
+     * @return array
+     */
+    public function pluginDetails()
+    {
+        return [
+            'name'        => '{{lower_author}}.{{lower_name}}::lang.plugin.name',
+            'description' => '{{lower_author}}.{{lower_name}}::lang.plugin.description',
+            'author'      => '{{author}}',
+            'icon'        => 'icon-leaf'
+        ];
+    }
+
+}
