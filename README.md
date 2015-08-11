@@ -11,7 +11,7 @@ be run:
 
 This plugin overrides default scaffold commands to generate translation aware source files.
 
-Following __php artisan__ commands are enhanced :
+Following `php artisan` commands are enhanced :
 - `create:plugin`
 - `create:controllers`
 - `create:component`
@@ -20,9 +20,10 @@ Following __php artisan__ commands are enhanced :
 
     artisan create:plugin Acme.Demo
     artisan create:controller Acme.Demo Turtles
-    artisan create:controller Acme.Demo Turtles
+    artisan create:component Acme.Demo TurtleList
     
-Will generate the plugin, with a controller and a component. The `lang/en/lang.php` will look like this :
+Thos commands will create the plugin, with a controller and a component. The new __Acme.Demo__ plugin `lang/en/lang.php` 
+will look like this :
  
 ```php
 <?php
@@ -62,12 +63,17 @@ Those keys are used in the controller, component and plugin classes, views or YA
 Language files for `en`, `config('app.locale')` and `config('app.fallback_locale')` are generated.
 
 The default values can be translated in other languages using the `lang/xx/lang.php` files of this plugin.
+If no default value is found, the key is used.
 
 ## Settings
 
+Only one setting is available through the back-end settings screen, in the *System* section. The checkbox, which is 
+checked by default, enables or disables the overriding by default.
 
+If it is unchecked, translated stub can still be generated using the `--translated` (or `-t`) option switch with 
+`create:plugin`, `create:controller` and `create:component` commands.
 
-## New command
+## New command available
 
     php artisan plugin:translate Acme.Plugin
 
