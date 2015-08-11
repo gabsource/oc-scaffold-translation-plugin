@@ -6,10 +6,10 @@
 
 This plugin overrides default scaffold commands to generate translation aware source files.
 
-Those commands are overrided :
-- plugin
-- controllers
-- component
+Following __php artisan__ commands are enhanced :
+- `create:plugin`
+- `create:controllers`
+- `create:component`
 
 ## New command
 
