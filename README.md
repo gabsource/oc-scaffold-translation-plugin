@@ -22,7 +22,7 @@ Following `php artisan` commands are enhanced :
     artisan create:controller Acme.Demo Turtles
     artisan create:component Acme.Demo TurtleList
     
-Thos commands will create the plugin, with a controller and a component. The new __Acme.Demo__ plugin `lang/en/lang.php` 
+Those commands will create the plugin, with a controller and a component. The new __Acme.Demo__ plugin `lang/en/lang.php` 
 will look like this :
  
 ```php
@@ -68,7 +68,7 @@ If no default value is found, the key is used.
 ## Settings
 
 Only one setting is available through the back-end settings screen, in the *System* section. The checkbox, which is 
-checked by default, enables or disables the overriding by default.
+checked by default, enables or disables the overriding.
 
 If it is unchecked, translated stub can still be generated using the `--translated` (or `-t`) option switch with 
 `create:plugin`, `create:controller` and `create:component` commands.
