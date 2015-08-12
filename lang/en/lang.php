@@ -5,7 +5,7 @@ return [
         'label'              => 'Scaffold translations',
         'description'        => 'Set default scaffold options',
         'field_default_mode' => [
-            'label' => 'Scaffold translation activated',
+            'label' => 'Generate translatable files with scaffold commands',
             'comment' => 'Flick this to enable or disable generation of translatable files using scaffold commands
                             (create:plugin, create:command, create:component, etc). If disabled, you can still bypass
                              this setting using the --translated or -t options switch.',

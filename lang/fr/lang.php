@@ -5,7 +5,7 @@ return [
         'label'              => 'Traduction des échafaudages',
         'description'        => 'Configurer le options par défaut',
         'field_default_mode' => [
-            'label'   => 'Traduction des échafaudages de code activée',
+            'label'   => 'Génération de fichiers traductibles via les commandes d‘échafaudage',
             'comment' => 'Cliquez sur l‘interrupteur pour activer ou désactiver la génération de fichiers traductibles
                             via les commandes d‘échafaudage (create:plugin, create:command, create:component, etc).
                             Si désactivé, vous pouvez tout de même forcer la génération de fichiers traductibles en
