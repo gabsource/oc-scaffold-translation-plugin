@@ -77,13 +77,13 @@ If it is unchecked, translated stub can still be generated using the `--translat
 
 ## New commands available
 
-# Generate a widget stub
+### Generate a widget stub
 
     php artisan create:widget Acme.Plugin FooWidget
     
 Similar to `create:formwidget`, no translation here.
 
-# Find missing translation keys
+### Find missing translation keys
 
     php artisan plugin:translate Acme.Plugin
 
