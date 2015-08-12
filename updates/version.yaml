@@ -1,2 +1,5 @@
+1.0.3:
+  - Fix controller stub
+  - New scaffold command for widget, create:widget
 1.0.2: Fix delete_confirm default message
 1.0.1: First version of ScaffoldTranslation

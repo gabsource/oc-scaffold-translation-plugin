@@ -2,6 +2,8 @@
 
 use BackendMenu;
 use Backend\Classes\Controller;
+use Flash;
+use Lang;
 
 /**
  * {{title_name}} Back-end Controller
@@ -24,15 +26,15 @@ class {{studly_name}} extends Controller
     }
 
     /**
-     * Deleted checked {{ lower_plural_name }}.
+     * Deleted checked {{lower_plural_name}}.
      */
     public function index_onDelete()
     {
         if (($checkedIds = post('checked')) && is_array($checkedIds) && count($checkedIds)) {
 
-            foreach ($checkedIds as ${{ lower_singular_model }}Id) {
-                if (!$user = {{ model }}::find(${{ lower_singular_model }}Id)) continue;
-                ${{ lower_singular_model }}->delete();
+            foreach ($checkedIds as ${{lower_singular_model}}Id) {
+                if (!${{lower_singular_model}} = {{model}}::find(${{lower_singular_model}}Id)) continue;
+                ${{lower_singular_model}}->delete();
             }
 
             Flash::success(Lang::get('{{lower_author}}.{{lower_plugin}}::lang.{{lower_plural_name}}.delete_selected_success'));

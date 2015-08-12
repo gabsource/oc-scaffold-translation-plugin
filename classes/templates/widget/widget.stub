@@ -1,0 +1,49 @@
+<?php namespace {{studly_author}}\{{studly_plugin}}\FormWidgets;
+
+use Backend\Classes\WidgetBase;
+
+/**
+ * {{name}} Widget
+ */
+class {{studly_name}} extends WidgetBase
+{
+
+    /**
+     * {@inheritDoc}
+     */
+    protected $defaultAlias = '{{lower_author}}_{{lower_plugin}}_{{snake_name}}';
+
+    /**
+     * {@inheritDoc}
+     */
+    public function init()
+    {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function render()
+    {
+        $this->prepareVars();
+        return $this->makePartial('{{lower_name}}');
+    }
+
+    /**
+     * Prepares the widget view data
+     */
+    public function prepareVars()
+    {
+        // $this->vars['foo'] = 'Bar';
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function loadAssets()
+    {
+        $this->addCss('css/{{lower_name}}.css', '{{author}}.{{plugin}}');
+        $this->addJs('js/{{lower_name}}.js', '{{author}}.{{plugin}}');
+    }
+
+}
