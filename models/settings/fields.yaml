@@ -4,6 +4,7 @@
 
 fields:
     default_mode:
-        label: bnb.scaffoldtranslation::lang.settings.field_default_mode
-        type: checkbox
+        label: bnb.scaffoldtranslation::lang.settings.field_default_mode.label
+        comment: bnb.scaffoldtranslation::lang.settings.field_default_mode.comment
+        type: switch
         default: true
