@@ -65,6 +65,8 @@ Language files for `en`, `config('app.locale')` and `config('app.fallback_locale
 The default values can be translated in other languages using the `lang/xx/lang.php` files of this plugin.
 If no default value is found, the key is used.
 
+_Warning:_ running those commands will rewrite and reformat existing language file returned array.
+
 ## Settings
 
 Only one setting is available through the back-end settings screen, in the *System* section. The checkbox, which is 
@@ -73,11 +75,21 @@ checked by default, enables or disables the overriding.
 If it is unchecked, translated stub can still be generated using the `--translated` (or `-t`) option switch with 
 `create:plugin`, `create:controller` and `create:component` commands.
 
-## New command available
+## New commands available
+
+# Generate a widget stub
+
+    php artisan create:widget Acme.Plugin FooWidget
+    
+Similar to `create:formwidget`, no translation here.
+
+# Find missing translation keys
 
     php artisan plugin:translate Acme.Plugin
 
 This new command will scan `classes`, `components`, `controllers`, `widgets`, `formwidgets` folders and `Plugin.php` files.
 It will detect missing translation key and add them to the `lang/xx/lang.php` files.
+
+_Warning:_ running those commands will rewrite and reformat existing language file returned array.
 
 [OctoberCMS]: https://octobercms.com
