@@ -42,7 +42,7 @@ return [
         'list_title' => 'Manage Turtles',
     ],
     'turtles' => [
-        'delete_selected_confirm' => 'Successfully deleted the selected turtles.',
+        'delete_selected_confirm' => 'Delete the selected turtles?',
         'menu_label' => 'Turtles',
         'return_to_list' => 'Return to Turtles',
         'delete_confirm' => 'Do you really want to delete this turtle?',

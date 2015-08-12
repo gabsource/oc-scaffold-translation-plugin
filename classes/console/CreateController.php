@@ -85,7 +85,7 @@ class CreateController extends \October\Rain\Scaffold\Console\CreateController
                 $langPrefix . $plural . '.delete_selected_success' => trans('bnb.scaffoldtranslation::lang.defaults.controller.delete_selected_success',
                     ['name' => $lowerTitlePlural]),
                 $langPrefix . $plural . '.delete_selected_empty'   => trans('bnb.scaffoldtranslation::lang.defaults.controller.delete_selected_empty'),
-                $langPrefix . $plural . '.delete_selected_confirm' => trans('bnb.scaffoldtranslation::lang.defaults.controller.delete_selected_success',
+                $langPrefix . $plural . '.delete_selected_confirm' => trans('bnb.scaffoldtranslation::lang.defaults.controller.delete_selected_confirm',
                     ['name' => $lowerTitlePlural]),
                 $langPrefix . $plural . '.menu_label'              => trans('bnb.scaffoldtranslation::lang.defaults.controller.menu_label',
                     ['name' => $titlePlural]),
