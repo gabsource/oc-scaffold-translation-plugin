@@ -5,9 +5,9 @@ return [
         'label'              => 'Traduction des échafaudages',
         'description'        => 'Configurer le options par défaut',
         'field_default_mode' => [
-            'label'   => 'Génération de fichiers traductibles via les commandes d‘échafaudage',
-            'comment' => 'Cliquez sur l‘interrupteur pour activer ou désactiver la génération de fichiers traductibles
-                            via les commandes d‘échafaudage (create:plugin, create:command, create:component, etc).
+            'label'   => 'Génération de fichiers traductibles via les commandes d’échafaudage',
+            'comment' => 'Cliquez sur l’interrupteur pour activer ou désactiver la génération de fichiers traductibles
+                            via les commandes d’échafaudage (create:plugin, create:command, create:component, etc).
                             Si désactivé, vous pouvez tout de même forcer la génération de fichiers traductibles en
                             utilisant les options --translated ou -t des commandes.',
         ]
@@ -21,7 +21,7 @@ return [
             'return_to_list'          => 'Retour à la liste des :name',
             'delete_confirm'          => 'Confirmez-vous la suppression de ce :name?',
             'delete_selected_success' => 'Les :name sélectionnés ont été supprimés avec succès.',
-            'delete_selected_empty'   => 'Il n‘y a aucun :name sélectionné à supprimer.',
+            'delete_selected_empty'   => 'Il n’y a aucun :name sélectionné à supprimer.',
             'delete_selected_confirm' => 'Supprimer les :name sélectionnés ?',
             'menu_label'              => ':name',
             'new'                     => 'Nouveau :name',
