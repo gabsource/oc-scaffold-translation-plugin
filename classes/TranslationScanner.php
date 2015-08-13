@@ -273,7 +273,7 @@ PHP
 return [$newContent
 ];
 PHP;
-        file_put_contents($path, preg_replace('/return(\s|\S)+\[.+$/s', $newContent, $contents));
+        file_put_contents($path, preg_replace('/return.+$/s', $newContent, $contents));
     }
 
 

@@ -30,7 +30,7 @@ abstract class TemplateBase extends \October\Rain\Scaffold\TemplateBase
             $self->setOverwrite(true);
 
         if(!$translated)
-            $translated = Settings::get('default_mode', false);
+            $translated = !!Settings::get('default_mode', "0");
 
         $self->translated = $translated;
 
