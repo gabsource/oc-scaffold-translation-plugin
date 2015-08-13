@@ -1,20 +1,17 @@
 # Scaffold Translation Plugin
 
-> This is an [OctoberCMS] plugin
-
-To manually install the plugin, files must be placed in `plugins/bnb/scaffoldtranslation` folder and this command must 
-be run:
-
-    php artisan plugin:refresh BnB.ScaffoldTranslation
-
 ## Purpose
 
-This plugin overrides default scaffold commands to generate translation aware source files.
+This [OctoberCMS] plugin overrides default scaffold commands to generate translation aware source files.
+
+> Note: after you install this plugin, the overridden commands will be executed by the plugin rather by the October core. If October core is updated with changes that affect the overridden commands options or stub, this plugin will still execute old logic of the commands. We will maintain the plugin in order to keep track with new options and stub evolutions. At any time you can switch back to October core stubs using the switch in the plugin settings page in the back-end.
 
 Following `php artisan` commands are enhanced :
 - `create:plugin`
 - `create:controllers`
 - `create:component`
+
+> Note: running those commands will rewrite and reformat existing plugin language files returned array.
 
 ## Usage
 
@@ -91,5 +88,13 @@ This new command will scan `classes`, `components`, `controllers`, `widgets`, `f
 It will detect missing translation key and add them to the `lang/xx/lang.php` files.
 
 _Warning:_ running those commands will rewrite and reformat existing language file returned array.
+
+## Manual installation
+
+To manually install the plugin, get the sources archive from Github, uncompress the files in 
+`plugins/bnb/scaffoldtranslation` folder and run this command at the root of OctoberCMS installation :
+
+    php artisan plugin:refresh BnB.ScaffoldTranslation
+
 
 [OctoberCMS]: https://octobercms.com
