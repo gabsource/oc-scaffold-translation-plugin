@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'commands' => [
+        'disclaimer' => 'You are using BnB.ScaffoldTranslation plugin overridden command. To switch back to default OctoberCMS command, disable or uninstall this plugin.',
+    ],
     'settings' => [
         'label'              => 'Scaffold translations',
         'description'        => 'Set default scaffold options',

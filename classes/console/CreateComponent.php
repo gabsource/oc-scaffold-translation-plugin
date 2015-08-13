@@ -13,6 +13,8 @@ class CreateComponent extends \October\Rain\Scaffold\Console\CreateComponent
      */
     public function fire()
     {
+        $this->comment(trans('bnb.scaffoldtranslation::lang.commands.disclaimer'));
+
         /*
          * Extract the author and name from the plugin code
          */

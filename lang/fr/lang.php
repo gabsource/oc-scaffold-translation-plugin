@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'commands' => [
+        'disclaimer' => 'Vous utilisez une commande surchargée par le plugin BnB.ScaffoldTranslation. Pour revenir à la commander par défaut d’OctoberCMS, désactivez ou désinstallez ce plugin.',
+    ],
     'settings' => [
         'label'              => 'Traduction des échafaudages',
         'description'        => 'Configurer le options par défaut',
