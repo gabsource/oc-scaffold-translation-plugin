@@ -18,7 +18,7 @@ return [
     'defaults' => [
         'component'  => [
             'name'        => 'Composant :name',
-            'description' => 'Aucune description pour le moment...',
+            'description' => 'Aucune description pour le moment…',
         ],
         'controller' => [
             'return_to_list'          => 'Retour à la liste des :name',
@@ -36,7 +36,7 @@ return [
         ],
         'plugin'     => [
             'name'        => ':name',
-            'description' => 'Aucune description pour le moment...',
+            'description' => 'Aucune description pour le moment…',
         ],
     ],
 ];
