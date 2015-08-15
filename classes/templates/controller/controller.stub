@@ -37,10 +37,10 @@ class {{studly_name}} extends Controller
                 ${{lower_singular_model}}->delete();
             }
 
-            Flash::success(Lang::get('{{lower_author}}.{{lower_plugin}}::lang.{{lower_plural_name}}.delete_selected_success'));
+            Flash::success(trans('{{lower_author}}.{{lower_plugin}}::lang.{{lower_plural_name}}.delete_selected_success'));
         }
         else {
-            Flash::error(Lang::get('{{lower_author}}.{{lower_plugin}}::lang.{{lower_plural_name}}.delete_selected_empty'));
+            Flash::error(trans('{{lower_author}}.{{lower_plugin}}::lang.{{lower_plural_name}}.delete_selected_empty'));
         }
 
         return $this->listRefresh();
