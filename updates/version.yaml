@@ -1,3 +1,4 @@
+1.0.9: Removed unnecessary trans call in component details stub
 1.0.8: plugin:translate command now also scans models folder
 1.0.7:
  - Improved french translation
