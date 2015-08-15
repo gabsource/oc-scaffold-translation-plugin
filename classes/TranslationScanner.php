@@ -114,7 +114,7 @@ class TranslationScanner
     /**
      * @param string $entry        entry to test
      * @param array  $translations current translations
-     * @param string $locale       current localeuage
+     * @param string $locale       current language
      *
      * @return int
      * @throws \Exception
@@ -159,9 +159,9 @@ class TranslationScanner
 
     /**
      * @param string $entry  entry key
-     * @param string $locale current localeuage
+     * @param string $locale current language
      *
-     * @return mixed a default value, gallback to entry key if not provided
+     * @return mixed a default value, fallback to entry key if not provided
      */
     public function value($entry, $locale)
     {
@@ -174,7 +174,7 @@ class TranslationScanner
 
 
     /**
-     * @return string the base path of the localeuages files, created if missing
+     * @return string the base path of the languages files, created if missing
      * @throws \Exception if the path is not a directory
      */
     protected function localePath()
@@ -203,7 +203,7 @@ class TranslationScanner
 
 
     /**
-     * @return array the list of available localeuage codes
+     * @return array the list of available language codes
      */
     protected function availableLocales()
     {
@@ -223,7 +223,7 @@ class TranslationScanner
 
 
     /**
-     * @param string $locale localeuage code
+     * @param string $locale language code
      *
      * @return array the translation array
      */
@@ -240,7 +240,7 @@ class TranslationScanner
 
 
     /**
-     * @param string $locale       the localeuage code to write
+     * @param string $locale       the language code to write
      * @param array  $translations the entries to write
      */
     protected function writeLocale($locale, $translations)
