@@ -62,6 +62,9 @@ class PluginTranslate extends Command
         $this->info(sprintf('Scanning controllers...'));
         $this->noFiles($scanner->with($vars)->scan($destinationPath . '/controllers'));
 
+        $this->info(sprintf('Scanning models...'));
+        $this->noFiles($scanner->with($vars)->scan($destinationPath . '/models'));
+
         $this->info(sprintf('Scanning components...'));
         $this->noFiles($scanner->with($vars)->scan($destinationPath . '/components'));
 

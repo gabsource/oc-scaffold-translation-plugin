@@ -84,7 +84,8 @@ Similar to `create:formwidget`, no translation here.
 
     php artisan plugin:translate Acme.Plugin
 
-This new command will scan `classes`, `components`, `controllers`, `widgets`, `formwidgets` folders and `Plugin.php` files.
+This new command will scan `classes`, `components`, `models`, `controllers`, `widgets`, `formwidgets` folders and 
+`Plugin.php` files.
 It will detect missing translation key and add them to the `lang/xx/lang.php` files.
 
 _Warning:_ running those commands will rewrite and reformat existing language file returned array.
