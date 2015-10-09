@@ -74,6 +74,9 @@ class PluginTranslate extends Command
         $this->info(sprintf('Scanning formwidgets...'));
         $this->noFiles($scanner->with($vars)->scan($destinationPath . '/formwidgets'));
 
+        $this->info(sprintf('Scanning report widgets...'));
+        $this->noFiles($scanner->with($vars)->scan($destinationPath . '/reportwidgets'));
+
         $this->info(sprintf('Scanning plugin files...'));
         $this->noFiles($scanner->with($vars)->scanFile($destinationPath . '/Plugin.php'));
 
