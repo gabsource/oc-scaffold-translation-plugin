@@ -4,6 +4,7 @@ use BnB\ScaffoldTranslation\Classes\TemplateBase;
 
 class Plugin extends TemplateBase
 {
+
     /**
      * @var array A mapping of stub to generated file.
      */

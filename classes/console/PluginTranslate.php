@@ -92,8 +92,7 @@ class PluginTranslate extends Command
         return [
             [
                 'pluginCode',
-                InputArgument
-                ::REQUIRED,
+                InputArgument::REQUIRED,
                 'The name of the plugin to scan. Eg: RainLab.Blog'
             ],
         ];
