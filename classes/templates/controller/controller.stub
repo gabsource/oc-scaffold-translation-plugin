@@ -4,6 +4,7 @@ use BackendMenu;
 use Backend\Classes\Controller;
 use Flash;
 use Lang;
+use {{studly_author}}\{{studly_plugin}}\Models\{{model}};
 
 /**
  * {{title_name}} Back-end Controller
