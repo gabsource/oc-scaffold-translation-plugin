@@ -23,7 +23,7 @@ return [
             'return_to_list'          => 'Retornar para :name',
             'delete_confirm'          => 'Deseja mesmo deletar este :name?',
             'delete_selected_success' => ':name selecionados deletados com sucesso.',
-            'delete_selected_empty'   => 'Não há :name Selecionados para deletar.',
+            'delete_selected_empty'   => 'Não há :name selecionados para deletar.',
             'delete_selected_confirm' => 'Deseja deletar os :name selecionados?',
             'menu_label'              => ':name',
             'new'                     => 'Inserir :name',
