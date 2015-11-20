@@ -35,7 +35,8 @@ class Plugin extends PluginBase
                 'icon'        => 'icon-gear',
                 'class'       => 'BnB\ScaffoldTranslation\Models\Settings',
                 'order'       => 900,
-                'keywords'    => 'scaffold translation'
+                'keywords'    => 'scaffold translation',
+                'permissions' => ['backend.manage_preferences']
             ]
         ];
     }
