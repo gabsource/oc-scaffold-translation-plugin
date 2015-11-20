@@ -1,3 +1,5 @@
+1.0.15:
+ - Checks for `backend.manage_preferences` to display the settings menu
 1.0.14:
  - Portuguese default translation file
  - Added the `use Vendor\Plugin\Models\Model` statemenet to the controller stub
