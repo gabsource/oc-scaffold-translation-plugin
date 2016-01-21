@@ -5,6 +5,7 @@ use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 use RecursiveRegexIterator;
 use RegexIterator;
+use SplFileInfo;
 
 class TranslationScanner
 {
@@ -212,8 +213,9 @@ class TranslationScanner
         $iterator = new RecursiveDirectoryIterator($this->localePath());
 
         foreach ($iterator as $name => $dir) {
+            /** @var SplFileInfo $dir */
             $name = basename($name);
-            if (preg_match('/[a-z]{2,3}/', $name) && is_writable($dir)) {
+            if (preg_match('/[a-z]{2,3}/', $name) && $dir->isWritable()) {
                 $locales[] = $name;
             }
         }
