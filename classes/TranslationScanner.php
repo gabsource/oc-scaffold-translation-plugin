@@ -213,7 +213,7 @@ class TranslationScanner
 
         foreach ($iterator as $name => $dir) {
             $name = basename($name);
-            if ($name !== '.' && $name !== '..') {
+            if (preg_match('/[a-z]{2,3}/', $name) && is_writable($dir)) {
                 $locales[] = $name;
             }
         }
