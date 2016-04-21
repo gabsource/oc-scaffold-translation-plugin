@@ -9,8 +9,9 @@
 namespace BnB\ScaffoldTranslation\Classes\Console;
 
 use BnB\ScaffoldTranslation\Classes\TranslationScanner;
+use BnB\ScaffoldTranslation\Models\Settings;
 use Lang;
-use October\Rain\Scaffold\Console\CreateComponent;
+use ReflectionClass;
 use Symfony\Component\Console\Input\InputOption;
 
 trait TranslatableCommand
@@ -21,12 +22,16 @@ trait TranslatableCommand
      */
     public function fire()
     {
-        $this->comment(trans('bnb.scaffoldtranslation::lang.commands.disclaimer'));
+        if ($this->isTranslationModeActive()) {
+            $this->comment(trans('bnb.scaffoldtranslation::lang.commands.disclaimer'));
 
-        parent::fire();
+            parent::fire();
 
-        $this->info(trans('bnb.scaffoldtranslation::lang.commands.success',
-            ['type' => $this->type, 'name' => $this->vars['author'] . '.' . $this->vars['name']]));
+            $this->info(trans('bnb.scaffoldtranslation::lang.commands.success',
+                ['type' => $this->type, 'name' => $this->vars['author'] . '.' . $this->vars['name']]));
+        } else {
+            parent::fire();
+        }
     }
 
 
@@ -78,6 +83,31 @@ trait TranslatableCommand
         return array_merge(parent::getOptions(), [
             ['translated', 't', InputOption::VALUE_NONE, 'Generate translation ready files.'],
         ]);
+    }
+
+
+    /**
+     * Get the source file path.
+     *
+     * @return string
+     */
+    protected function getSourcePath()
+    {
+        if ($this->isTranslationModeActive()) {
+            $className = get_class($this);
+        } else {
+            $className = get_parent_class($this);
+        }
+
+        $class = new ReflectionClass($className);
+
+        return dirname($class->getFileName());
+    }
+
+
+    public function isTranslationModeActive()
+    {
+        return ! ! Settings::get('default_mode', true) || ! ! $this->option('translated');
     }
 
 }
