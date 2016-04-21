@@ -2,6 +2,7 @@
 
 use BnB\ScaffoldTranslation\Classes\TranslationScanner;
 use Illuminate\Console\Command;
+use InvalidArgumentException;
 use Symfony\Component\Console\Input\InputArgument;
 
 class PluginTranslate extends Command
@@ -35,7 +36,7 @@ class PluginTranslate extends Command
         /*
          * Extract the author and name from the plugin code
          */
-        $pluginCode = $this->argument('pluginCode');
+        $pluginCode = $this->argument('plugin');
         $parts      = explode('.', $pluginCode);
 
         if (count($parts) != 2) {

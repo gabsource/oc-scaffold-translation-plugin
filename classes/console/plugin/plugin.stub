@@ -1,5 +1,6 @@
 <?php namespace {{studly_author}}\{{studly_name}};
 
+use Backend;
 use System\Classes\PluginBase;
 
 /**
@@ -21,6 +22,26 @@ class Plugin extends PluginBase
             'author'      => '{{author}}',
             'icon'        => 'icon-leaf'
         ];
+    }
+
+    /**
+     * Register method, called when the plugin is first registered.
+     *
+     * @return void
+     */
+    public function register()
+    {
+
+    }
+
+    /**
+     * Boot method, called right before the request route.
+     *
+     * @return array
+     */
+    public function boot()
+    {
+
     }
 
     /**

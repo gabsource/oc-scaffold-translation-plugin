@@ -3,6 +3,7 @@
 return [
     'commands' => [
         'disclaimer' => 'Vous utilisez une commande surchargée par le plugin BnB.ScaffoldTranslation. Pour revenir à la commander par défaut d’OctoberCMS, désactivez ou désinstallez ce plugin.',
+        'success'    => 'Les traduction du :type :name ont été générées avec succès !'
     ],
     'settings' => [
         'label'              => 'Traduction des échafaudages',
@@ -37,6 +38,9 @@ return [
         'plugin'     => [
             'name'        => ':name',
             'description' => 'Aucune description pour le moment...',
+            'permissions' => [
+                'some_permission' => 'Exemple de permission',
+            ],
         ],
     ],
 ];

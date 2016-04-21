@@ -3,6 +3,7 @@
 return [
     'commands' => [
         'disclaimer' => 'You are using BnB.ScaffoldTranslation plugin overridden command. To switch back to default OctoberCMS command, disable or uninstall this plugin.',
+        'success' => 'Successfully generated translations for :type named :name',
     ],
     'settings' => [
         'label'              => 'Scaffold translations',
@@ -36,6 +37,9 @@ return [
         'plugin'     => [
             'name'        => ':name',
             'description' => 'No description provided yet...',
+            'permissions' => [
+                'some_permission' => 'Permission example',
+            ],
         ],
     ],
 ];
