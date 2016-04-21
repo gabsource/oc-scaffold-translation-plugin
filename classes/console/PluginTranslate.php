@@ -36,8 +36,8 @@ class PluginTranslate extends Command
         /*
          * Extract the author and name from the plugin code
          */
-        $pluginCode = $this->argument('plugin');
-        $parts      = explode('.', $pluginCode);
+        $plugin = $this->argument('name');
+        $parts      = explode('.', $plugin);
 
         if (count($parts) != 2) {
             $this->error('Invalid plugin name, either too many dots or not enough.');
@@ -81,7 +81,7 @@ class PluginTranslate extends Command
         $this->info(sprintf('Scanning plugin files...'));
         $this->noFiles($scanner->with($vars)->scanFile($destinationPath . '/Plugin.php'));
 
-        $this->info(sprintf('Successfully generated translation entries for plugin "%s"', $pluginCode));
+        $this->info(sprintf('Successfully generated translation entries for plugin "%s"', $plugin));
     }
 
 
@@ -92,7 +92,7 @@ class PluginTranslate extends Command
     {
         return [
             [
-                'pluginCode',
+                'name',
                 InputArgument::REQUIRED,
                 'The name of the plugin to scan. Eg: RainLab.Blog'
             ],
