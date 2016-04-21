@@ -3,12 +3,17 @@
 use BnB\ScaffoldTranslation\Classes\Templates\Widget;
 use BnB\ScaffoldTranslation\Classes\TranslationScanner;
 use Illuminate\Console\Command;
+use InvalidArgumentException;
 use Lang;
+use October\Rain\Scaffold\GeneratorCommand;
+use Str;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 
-class CreateWidget extends Command
+class CreateWidget extends GeneratorCommand implements TranslationAwareCommand
 {
+
+    use TranslatableCommand;
 
     /**
      * The console command name.
@@ -20,59 +25,41 @@ class CreateWidget extends Command
      */
     protected $description = 'Creates a new widget.';
 
+    /**
+     * The console command description.
+     */
+    protected $type = 'Widget';
 
     /**
-     * Create a new command instance.
+     * @var array A mapping of stub to generated file.
      */
-    public function __construct()
-    {
-        parent::__construct();
-    }
+    protected $stubs = [
+        'widget/widget.stub'     => 'widgets/{{studly_name}}.php',
+        'widget/partial.stub'    => 'widgets/{{lower_name}}/_{{lower_name}}.htm',
+        'widget/stylesheet.stub' => 'widgets/{{lower_name}}/assets/css/{{lower_name}}.css',
+        'widget/javascript.stub' => 'widgets/{{lower_name}}/assets/js/{{lower_name}}.js',
+    ];
 
 
     /**
-     * Execute the console command.
+     * Prepare variables for stubs.
+     *
+     * return @array
      */
-    public function fire()
+    protected function prepareVars()
     {
-        /*
-         * Extract the author and name from the plugin code
-         */
-        $pluginCode = $this->argument('pluginCode');
-        $parts      = explode('.', $pluginCode);
-        $pluginName = array_pop($parts);
-        $authorName = array_pop($parts);
+        $pluginCode = $this->argument('plugin');
 
-        $destinationPath = plugins_path() . '/' . strtolower($authorName) . '/' . strtolower($pluginName);
-        $widgetName      = $this->argument('widgetName');
-        $vars            = [
-            'name'   => $widgetName,
-            'author' => $authorName,
-            'plugin' => $pluginName
+        $parts  = explode('.', $pluginCode);
+        $plugin = array_pop($parts);
+        $author = array_pop($parts);
+        $widget = $this->argument('widget');
+
+        return [
+            'name'   => $widget,
+            'author' => $author,
+            'plugin' => $plugin
         ];
-
-        Widget::make($destinationPath, $vars, $this->option('force'));
-
-        $vars['plugin'] = $vars['name'];
-        $langPrefix     = strtolower($authorName) . '.' . strtolower($pluginName) . '::lang.';
-
-        $defaultLocale = Lang::getLocale();
-        $locales       = TranslationScanner::loadPluginLocales();
-
-        foreach ($locales as $locale) {
-            Lang::setLocale($locale);
-            $vars[$locale] = [
-                $langPrefix . 'plugin.name'        => trans('bnb.scaffoldtranslation::lang.defaults.widget.name',
-                    ['name' => $pluginName]),
-                $langPrefix . 'plugin.description' => trans('bnb.scaffoldtranslation::lang.defaults.widget.description'),
-            ];
-        }
-
-        Lang::setLocale($defaultLocale);
-
-        TranslationScanner::instance()->with($vars)->scan($destinationPath . '/widgets');
-
-        $this->info(sprintf('Successfully generated Form Widget named "%s"', $widgetName));
     }
 
 
@@ -82,8 +69,8 @@ class CreateWidget extends Command
     protected function getArguments()
     {
         return [
-            ['pluginCode', InputArgument::REQUIRED, 'The name of the plugin. Eg: RainLab.Blog'],
-            ['widgetName', InputArgument::REQUIRED, 'The name of the widget. Eg: PostList'],
+            ['plugin', InputArgument::REQUIRED, 'The name of the plugin. Eg: RainLab.Blog'],
+            ['widget', InputArgument::REQUIRED, 'The name of the widget. Eg: PostList'],
         ];
     }
 
@@ -99,4 +86,43 @@ class CreateWidget extends Command
         ];
     }
 
+
+    /**
+     * Build custom translated variables for the stub generation
+     *
+     * @return array
+     */
+    public function prepareTranslatedVars()
+    {
+        $langPrefix = strtolower($this->vars['author']) . '.' . strtolower($this->vars['plugin']) . '::lang.wdigets.' . strtolower($this->vars['name']) . '.';
+
+        return [
+            $langPrefix . 'plugin.name'        =>
+                trans('bnb.scaffoldtranslation::lang.defaults.widget.name', ['name' => $this->vars['name']]),
+            $langPrefix . 'plugin.description' =>
+                trans('bnb.scaffoldtranslation::lang.defaults.widget.description')
+        ];
+    }
+
+
+    /**
+     * Get the list of files to scan for translation
+     *
+     * @return array
+     */
+    public function getScannedFiles()
+    {
+        return [];
+    }
+
+
+    /**
+     * Get the list of folders to scan recursively for translation
+     *
+     * @return array
+     */
+    public function getScannedFolders()
+    {
+        return [$this->getDestinationPath() . '/widgets'];
+    }
 }
