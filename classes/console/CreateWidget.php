@@ -1,12 +1,8 @@
 <?php namespace BnB\ScaffoldTranslation\Classes\Console;
 
-use BnB\ScaffoldTranslation\Classes\Templates\Widget;
-use BnB\ScaffoldTranslation\Classes\TranslationScanner;
 use Illuminate\Console\Command;
-use InvalidArgumentException;
 use Lang;
 use October\Rain\Scaffold\GeneratorCommand;
-use Str;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 
