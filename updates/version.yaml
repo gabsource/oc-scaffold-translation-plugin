@@ -1,3 +1,4 @@
+1.1.1: OctoberCMS stable release
 1.1.0: Ready for OctoberCMS release
 1.0.17: Plugin stub updated to reflect current October version
 1.0.16: Fix the language folders lookup. Now checks only two or three letters folder that are writable.
