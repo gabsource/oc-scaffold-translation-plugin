@@ -57,29 +57,40 @@ class PluginTranslate extends Command
 
         $scanner = TranslationScanner::instance();
 
-        $this->info(sprintf('Scanning classes...'));
-        $this->noFiles($scanner->with($vars)->scan($destinationPath . '/classes'));
+        collect([
+            'behaviors',
+            'classes',
+            'console',
+            'controllers',
+            'components',
+            'helpers',
+            'models',
+            'partials',
+            'widgets',
+            'formwidgets',
+            'reportwidgets',
+            'traits',
+            'twig',
+            'views',
+        ])->each(function ($path) use ($destinationPath, $scanner, $vars) {
+            $target = "{$destinationPath}/{$path}";
 
-        $this->info(sprintf('Scanning controllers...'));
-        $this->noFiles($scanner->with($vars)->scan($destinationPath . '/controllers'));
+            if (is_dir($target)) {
+                $this->info(sprintf("Scanning {$path}..."));
+                $this->noFiles($scanner->with($vars)->scan($target));
+            }
+        });
 
-        $this->info(sprintf('Scanning models...'));
-        $this->noFiles($scanner->with($vars)->scan($destinationPath . '/models'));
+        collect([
+            'Plugin.php',
+        ])->each(function ($path) use ($destinationPath, $scanner, $vars) {
+            $target = "{$destinationPath}/{$path}";
 
-        $this->info(sprintf('Scanning components...'));
-        $this->noFiles($scanner->with($vars)->scan($destinationPath . '/components'));
-
-        $this->info(sprintf('Scanning widgets...'));
-        $this->noFiles($scanner->with($vars)->scan($destinationPath . '/widgets'));
-
-        $this->info(sprintf('Scanning formwidgets...'));
-        $this->noFiles($scanner->with($vars)->scan($destinationPath . '/formwidgets'));
-
-        $this->info(sprintf('Scanning report widgets...'));
-        $this->noFiles($scanner->with($vars)->scan($destinationPath . '/reportwidgets'));
-
-        $this->info(sprintf('Scanning plugin files...'));
-        $this->noFiles($scanner->with($vars)->scanFile($destinationPath . '/Plugin.php'));
+            if (is_file($target)) {
+                $this->info(sprintf("Scanning {$path}..."));
+                $this->noFiles($scanner->with($vars)->scanFile($target));
+            }
+        });
 
         $this->info(sprintf('Successfully generated translation entries for plugin "%s"', $plugin));
     }
