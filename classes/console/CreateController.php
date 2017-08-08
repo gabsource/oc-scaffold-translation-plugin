@@ -8,6 +8,13 @@ class CreateController extends \October\Rain\Scaffold\Console\CreateController i
 
     use TranslatableCommand;
 
+    /**
+     * The console command name.
+     *
+     * @var string
+     */
+    protected $name = 'create:controller:translated';
+
 
     /**
      * Build custom translated variables for the stub generation

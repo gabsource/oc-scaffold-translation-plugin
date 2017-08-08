@@ -16,31 +16,31 @@ class ScaffoldServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bindShared('command.create.plugin', function () {
+        $this->app->bindShared('command.create.plugin.translated', function () {
             return new CreatePlugin;
         });
 
-        $this->app->bindShared('command.create.controller', function () {
+        $this->app->bindShared('command.create.controller.translated', function () {
             return new CreateController;
         });
 
-        $this->app->bindShared('command.create.component', function () {
+        $this->app->bindShared('command.create.component.translated', function () {
             return new CreateComponent;
         });
 
-        $this->app->bindShared('command.create.widget', function () {
+        $this->app->bindShared('command.create.widget.translated', function () {
             return new CreateWidget;
         });
 
-        $this->app->bindShared('command.plugin.translate', function () {
+        $this->app->bindShared('command.plugin.translate.translated', function () {
             return new PluginTranslate;
         });
 
-        $this->commands('command.create.plugin');
-        $this->commands('command.create.controller');
-        $this->commands('command.create.component');
-        $this->commands('command.create.widget');
-        $this->commands('command.plugin.translate');
+        $this->commands('command.create.plugin.translated');
+        $this->commands('command.create.controller.translated');
+        $this->commands('command.create.component.translated');
+        $this->commands('command.create.widget.translated');
+        $this->commands('command.plugin.translate.translated');
     }
 
 

@@ -8,6 +8,13 @@ class CreateComponent extends \October\Rain\Scaffold\Console\CreateComponent imp
 
     use TranslatableCommand;
 
+    /**
+     * The console command name.
+     *
+     * @var string
+     */
+    protected $name = 'create:component:translated';
+
 
     /**
      * Build custom translated variables for the stub generation

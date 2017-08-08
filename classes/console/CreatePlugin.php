@@ -8,6 +8,13 @@ class CreatePlugin extends \October\Rain\Scaffold\Console\CreatePlugin implement
 
     use TranslatableCommand;
 
+    /**
+     * The console command name.
+     *
+     * @var string
+     */
+    protected $name = 'create:plugin:translated';
+
 
     public function prepareVars()
     {
