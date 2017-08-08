@@ -25,23 +25,6 @@ class Plugin extends PluginBase
     }
 
 
-    public function registerSettings()
-    {
-        return [
-            'settings' => [
-                'label'       => 'bnb.scaffoldtranslation::lang.settings.label',
-                'description' => 'bnb.scaffoldtranslation::lang.settings.description',
-                'category'    => 'system::lang.system.categories.system',
-                'icon'        => 'icon-gear',
-                'class'       => 'BnB\ScaffoldTranslation\Models\Settings',
-                'order'       => 900,
-                'keywords'    => 'scaffold translation',
-                'permissions' => ['backend.manage_preferences']
-            ]
-        ];
-    }
-
-
     public function boot()
     {
         App::register('\BnB\ScaffoldTranslation\Classes\ScaffoldServiceProvider');

@@ -1,3 +1,7 @@
+1.2.0:
+  - LTS compatibility
+  - Commands are renamed to ***:translated
+  - No overriding of default commands anymore
 1.1.2: Scan more folders for news translation strings
 1.1.1: OctoberCMS stable release
 1.1.0: Ready for OctoberCMS release
@@ -26,4 +30,3 @@
 1.0.2: Fix delete_confirm default message
 1.0.1:
   - First version of ScaffoldTranslation
-  - save_default_settings.php

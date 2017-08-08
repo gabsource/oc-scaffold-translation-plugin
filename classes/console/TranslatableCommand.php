@@ -9,10 +9,8 @@
 namespace BnB\ScaffoldTranslation\Classes\Console;
 
 use BnB\ScaffoldTranslation\Classes\TranslationScanner;
-use BnB\ScaffoldTranslation\Models\Settings;
 use Lang;
 use ReflectionClass;
-use Symfony\Component\Console\Input\InputOption;
 
 trait TranslatableCommand
 {
@@ -76,17 +74,6 @@ trait TranslatableCommand
 
 
     /**
-     * Get the console command options.
-     */
-    protected function getOptions()
-    {
-        return array_merge(parent::getOptions(), [
-            ['translated', 't', InputOption::VALUE_NONE, 'Generate translation ready files.'],
-        ]);
-    }
-
-
-    /**
      * Get the source file path.
      *
      * @return string
@@ -107,7 +94,7 @@ trait TranslatableCommand
 
     public function isTranslationModeActive()
     {
-        return ! ! Settings::get('default_mode', true) || ! ! $this->option('translated');
+        return true;
     }
 
 }

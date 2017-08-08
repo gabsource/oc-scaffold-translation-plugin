@@ -2,22 +2,20 @@
 
 ## Purpose
 
-This [OctoberCMS] plugin overrides default scaffold commands to generate translation aware source files.
-
-> Note: after you install this plugin, the overridden commands will be executed by the plugin rather by the October core. If October core is updated with changes that affect the overridden commands options or stub, this plugin will still execute old logic of the commands. We will maintain the plugin in order to keep track with new options and stub evolutions. At any time you can switch back to October core stubs using the switch in the plugin settings page in the back-end.
+This [OctoberCMS] plugin adds scaffold commands to generate translation aware source files.
 
 Following `php artisan` commands are enhanced :
-- `create:plugin`
-- `create:controllers`
-- `create:component`
+- `create:plugin:translated`
+- `create:controllers:translated`
+- `create:component:translated`
 
-> Note: running those commands will rewrite and reformat existing plugin language files returned array.
+> Note: running those commands will rewrite and reformat existing plugin language files (ie. the returned PHP array).
 
 ## Usage
 
-    artisan create:plugin Acme.Demo
-    artisan create:controller Acme.Demo Turtles
-    artisan create:component Acme.Demo TurtleList
+    php artisan create:plugin:translated Acme.Demo
+    php artisan create:controller:translated Acme.Demo Turtles
+    php artisan create:component:translated Acme.Demo TurtleList
     
 Those commands will create the plugin, with a controller and a component. The new __Acme.Demo__ plugin `lang/en/lang.php` 
 will look like this :
@@ -55,28 +53,18 @@ return [
 ];
 ```
 
-Those keys are used in the controller, component and plugin classes, views or YAML files.
+These keys are used in controller, component and plugin classes, views or YAML files.
 
 Language files for `en`, `config('app.locale')` and `config('app.fallback_locale')` are generated.
 
 The default values can be translated in other languages using the `lang/xx/lang.php` files of this plugin.
 If no default value is found, the key is used.
 
-_Warning:_ running those commands will rewrite and reformat existing language file returned array.
-
-## Settings
-
-Only one setting is available through the back-end settings screen, in the *System* section. The checkbox, which is 
-checked by default, enables or disables the overriding.
-
-If it is unchecked, translated stub can still be generated using the `--translated` (or `-t`) option switch with 
-`create:plugin`, `create:controller` and `create:component` commands.
-
 ## New commands available
 
 ### Generate a widget stub
 
-    php artisan create:widget Acme.Plugin FooWidget
+    php artisan create:widget:translated Acme.Plugin FooWidget
     
 Similar to `create:formwidget`, no translation here.
 

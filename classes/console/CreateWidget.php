@@ -14,7 +14,7 @@ class CreateWidget extends GeneratorCommand implements TranslationAwareCommand
     /**
      * The console command name.
      */
-    protected $name = 'create:widget';
+    protected $name = 'create:widget:translated';
 
     /**
      * The console command description.
