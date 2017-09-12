@@ -16,23 +16,23 @@ class ScaffoldServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bindShared('command.create.plugin.translated', function () {
+        $this->app->singleton('command.create.plugin.translated', function () {
             return new CreatePlugin;
         });
 
-        $this->app->bindShared('command.create.controller.translated', function () {
+        $this->app->singleton('command.create.controller.translated', function () {
             return new CreateController;
         });
 
-        $this->app->bindShared('command.create.component.translated', function () {
+        $this->app->singleton('command.create.component.translated', function () {
             return new CreateComponent;
         });
 
-        $this->app->bindShared('command.create.widget.translated', function () {
+        $this->app->singleton('command.create.widget.translated', function () {
             return new CreateWidget;
         });
 
-        $this->app->bindShared('command.plugin.translate.translated', function () {
+        $this->app->singleton('command.plugin.translate.translated', function () {
             return new PluginTranslate;
         });
 
