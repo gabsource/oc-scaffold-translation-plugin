@@ -18,17 +18,17 @@ trait TranslatableCommand
     /**
      * Execute the console command.
      */
-    public function fire()
+    public function handle()
     {
         if ($this->isTranslationModeActive()) {
             $this->comment(trans('bnb.scaffoldtranslation::lang.commands.disclaimer'));
 
-            parent::fire();
+            parent::handle();
 
             $this->info(trans('bnb.scaffoldtranslation::lang.commands.success',
                 ['type' => $this->type, 'name' => $this->vars['author'] . '.' . $this->vars['name']]));
         } else {
-            parent::fire();
+            parent::handle();
         }
     }
 

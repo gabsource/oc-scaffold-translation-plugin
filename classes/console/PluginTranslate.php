@@ -31,7 +31,7 @@ class PluginTranslate extends Command
     /**
      * Execute the console command.
      */
-    public function fire()
+    public function handle()
     {
         /*
          * Extract the author and name from the plugin code
