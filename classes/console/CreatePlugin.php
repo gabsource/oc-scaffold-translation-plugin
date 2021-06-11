@@ -16,7 +16,7 @@ class CreatePlugin extends \October\Rain\Scaffold\Console\CreatePlugin implement
     protected $name = 'create:plugin:translated';
 
 
-    public function prepareVars()
+    public function prepareVars(): array
     {
         $vars = parent::prepareVars();
 
@@ -65,5 +65,4 @@ class CreatePlugin extends \October\Rain\Scaffold\Console\CreatePlugin implement
     {
         return [];
     }
-
 }
