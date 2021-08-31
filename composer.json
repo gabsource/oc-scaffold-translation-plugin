@@ -1,0 +1,15 @@
+{
+    "name": "bnb/scaffoldtranslation-plugin",
+    "type": "october-plugin",
+    "description": "This OctoberCMS plugin adds scaffold commands to generate translation aware source files",
+    "keywords": [
+        "october",
+        "octobercms",
+        "php"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.0",
+        "composer/installers": "~1.0"
+    }
+}

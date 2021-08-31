@@ -78,7 +78,7 @@ trait TranslatableCommand
      *
      * @return string
      */
-    protected function getSourcePath()
+    protected function getSourcePath(): string
     {
         if ($this->isTranslationModeActive()) {
             $className = get_class($this);
